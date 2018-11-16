@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
   get '/galaxies', to: 'galaxies#index'
-
+  get 'galaxies/:id', to: 'galaxies#show'
+  post '/galaxies', to: 'galaxies#create'
+  delete '/galaxies/:id', to: 'galaxies#delete'
+  put '/galaxies/:id', to: 'galaxies#update'
 end
