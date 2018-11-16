@@ -58,7 +58,7 @@ class Galaxy
       def self.update(id, opts)
           results = DB.exec(
               <<-SQL
-                  UPDATE gifts
+                  UPDATE galaxies
                   SET name='#{opts["name"]}', distance='#{opts["distance"]}', radius='#{opts["radius"]}', date_discovered=#{opts["date_discovered"]}, img='#{opts["img"]}', shape='#{opts["shape"]}'
                   WHERE id=#{id}
                   RETURNING id, name, distance, radius, date_discovered, img, shape;
