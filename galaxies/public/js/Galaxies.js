@@ -4,15 +4,49 @@ class Galaxies extends React.Component {
         this.getGalaxies = this.getGalaxies.bind(this);
         this.toggleState = this.toggleState.bind(this);
         this.showGalaxy = this.showGalaxy.bind(this);
+        this.deleteGalaxy = this.deleteGalaxy.bind(this);
+        this.galaxyCreate = this.galaxyCreate.bind(this);
+        this.galaxyCreateSubmit = this.galaxyCreateSubmit.bind(this);
         this.state = {
             galaxiesIsVisible: true,
             galaxyIsVisible: false,
+            addGalaxyIsVisible: false,
             galaxies: [],
             galaxy: {}
         }
     }
     componentDidMount() {
         this.getGalaxies();
+    }
+    deleteGalaxy(galaxy, id){
+        fetch('/galaxies/' + id, {
+            method: 'DELETE'
+        }).then(response => {
+            this.getGalaxies()
+        })
+    }
+    galaxyCreate(galaxy){
+        console.log([galaxy, ...this.state.galaxies]);
+        this.setState({
+            galaxies: [galaxy, ...this.state.galaxies]
+        })
+    }
+    galaxyCreateSubmit(galaxy){
+        fetch('/galaxies', {
+            body: JSON.stringify(galaxy),
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+            }
+        }).then(createdGalaxy => {
+            console.log(createdGalaxy, 'Created Galaxy');
+            return createdGalaxy.json()
+        }).then(jsonedGalaxy => {
+            console.log(jsonedGalaxy, 'JSONed Galaxy');
+            this.galaxyCreate(jsonedGalaxy)
+            this.toggleState('galaxiesIsVisible', 'addGalaxyIsVisible')
+        })
     }
     getGalaxies() {
         fetch('/galaxies').then(response => response.json()).then(data => {
@@ -52,11 +86,26 @@ class Galaxies extends React.Component {
                       ?
                       <Galaxy
                           toggleState={this.toggleState}
-                          galaxy={this.state.galaxy}>
+                          galaxy={this.state.galaxy}
+                          deleteGalaxy={this.deleteGalaxy}
+                          galaxySubmit={this.galaxyCreateSubmit}>
                       </Galaxy>
                       :
                       ''
                   }
+                  {this.state.addGalaxyIsVisible
+                      ?
+                      <GalaxiesForm
+                          galaxySubmit={this.galaxyCreateSubmit}
+                          galaxy={this.state.galaxy}
+                          toggleState={this.toggleState}>
+                      </GalaxiesForm>
+                      :
+                      ''
+                  }
+                  <button onClick={()=>{
+                      this.toggleState('galaxiesIsVisible', 'addGalaxyIsVisible')
+                  }}>Add New Galaxy</button>
                   <footer>
                     <h4>Created and designed by Kyle Meserve and Rick Christenhusz</h4>
                     <h4>2018</h4>
