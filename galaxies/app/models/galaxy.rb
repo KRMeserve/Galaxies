@@ -17,8 +17,8 @@ class Galaxy
     end
 
     def self.find(id)
-    results = DB.exec("SELECT * FROM galaxies WHERE id=#{id};")
-    return
+    results = DB.exec("SELECT * FROM galaxies WHERE id = #{id};")
+    return results.map do |result|
             {
                 "id" => result["id"].to_i,
                 "name" => result["name"],
@@ -28,6 +28,7 @@ class Galaxy
                 "img" => result["img"],
                 "shape" => result["shape"]
             }
+        end
     end
 
     def self.create(opts)
