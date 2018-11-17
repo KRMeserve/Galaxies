@@ -19,8 +19,9 @@ class Galaxies extends React.Component {
     }
     render(){
         return (
+            <div>
+              <h1>Best Galaxies in the World!</h1>
               <div className="container">
-                <h1>Best Galaxies in the World!</h1>
                   {this.state.galaxies.map((galaxy, index) => {
                       return (
                           <div className="galaxy">
@@ -37,6 +38,7 @@ class Galaxies extends React.Component {
                     <h4>Created and designed by Kyle Meserve and Rick Christenhusz <span>2018</span></h4>
                   </footer>
               </div>
+            </div>
         )
     }
 }
