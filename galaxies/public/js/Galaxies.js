@@ -1,9 +1,14 @@
 class Galaxies extends React.Component {
     constructor(props){
         super(props);
-        this.getGalaxies = this.getGalaxies.bind(this)
+        this.getGalaxies = this.getGalaxies.bind(this);
+        this.toggleState = this.toggleState.bind(this);
+        this.showGalaxy = this.showGalaxy.bind(this);
         this.state = {
-            galaxies: []
+            galaxiesIsVisible: true,
+            galaxyIsVisible: false,
+            galaxies: [],
+            galaxy: {}
         }
     }
     componentDidMount() {
@@ -17,21 +22,46 @@ class Galaxies extends React.Component {
             console.log(data);
         })
     }
+    showGalaxy(galaxy) {
+        this.setState({
+            galaxy: galaxy
+        });
+    }
+    toggleState(st1, st2) {
+        this.setState({
+            [st1]: !this.state[st1],
+            [st2]: !this.state[st2]
+        })
+    }
     render(){
         return (
-            <div className="container">
-                {this.state.galaxies.map((galaxy, index) => {
-                    return (
-                        <div className="galaxy">
-                            <h1>{galaxy.name}</h1>
-                            <h4>Distance from Earth: {galaxy.distance}</h4>
-                            <h4>Radius: {galaxy.radius}</h4>
-                            <h4>Date Discovered: {galaxy.date_discovered}</h4>
-                            <h4>Shape of Galaxy: {galaxy.shape}</h4>
-                            <img src={galaxy.img}></img>
-                        </div>
-                    )
-                })}
+            <div>
+              <h1>Best Galaxies in the World!</h1>
+              <div className="container">
+                  {this.state.galaxiesIsVisible
+                      ?
+                      <GalaxiesList
+                          galaxies={this.state.galaxies}
+                          toggleState={this.toggleState}
+                          showGalaxy={this.showGalaxy}>
+                      </GalaxiesList>
+                      :
+                      ''
+                  }
+                  {this.state.galaxyIsVisible
+                      ?
+                      <Galaxy
+                          toggleState={this.toggleState}
+                          galaxy={this.state.galaxy}>
+                      </Galaxy>
+                      :
+                      ''
+                  }
+                  <footer>
+                    <h4>Created and designed by Kyle Meserve and Rick Christenhusz</h4>
+                    <h4>2018</h4>
+                  </footer>
+              </div>
             </div>
         )
     }

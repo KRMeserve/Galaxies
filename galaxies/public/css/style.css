@@ -1,13 +1,44 @@
 body {
   background-color: black;
   color: white;
+  background-image: url('https://goo.gl/mUiRaQ');
+}
+
+h1 {
+  font-family: 'Geostar Fill', cursive;
+  font-size: 50px;
+  margin: 50px auto;
+  text-align: center;
+
 }
 
 .container {
-
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
 }
 
 img {
-  width: 200px;
+  /* margin: 0 20px; */
+  width: 500px;
   height: auto;
+  border: 1px solid rgb(4, 115, 186);
+  border-radius: 10px;
 }
+
+.galaxy {
+  margin: 0 50px;
+  text-align: center;
+}
+
+footer {
+  margin-top: 30px;
+  width: 100%;
+  background-color: rgb(62, 62, 62);
+  /* justify-content: space-between; */
+  text-align: center;
+}
+
+/* footer > span {
+  text-align: right;
+} */
