@@ -9,7 +9,7 @@ class GalaxiesForm extends React.Component{
             radius: '',
             date_discovered: 0,
             shape: '',
-            img: 'https://7gigzxopz0uiqxo1-zippykid.netdna-ssl.com/wp-content/uploads/2015/08/cheese.jpg'
+            img: ''
         }
     }
     componentDidMount(){
@@ -26,7 +26,6 @@ class GalaxiesForm extends React.Component{
         }
     }
     handleChange(event){
-        console.log(event);
         this.setState({
             [event.target.id]: event.target.value
         })
@@ -41,7 +40,17 @@ class GalaxiesForm extends React.Component{
                 <form onSubmit={this.handleSubmit}>
                     <p>Name:</p>
                     <input type='text' id="name" ref="name" onChange={this.handleChange} value={this.state.name}></input>
-                    <input type="submit"></input>
+                    <p>Distance: </p>
+                    <input type='text' id='distance' onChange={this.handleChange} value={this.state.distance}></input>
+                    <p>Radius: </p>
+                    <input type='text' id='radius' onChange={this.handleChange} value={this.state.radius}></input>
+                    <p>Date Discovered: </p>
+                    <input type='number' id="date_discovered" onChange={this.handleChange} value={this.state.date_discovered}></input>
+                    <p>Shape: </p>
+                    <input type="text" id='shape' onChange={this.handleChange} value={this.state.shape}></input>
+                    <p>Image Link: </p>
+                    <input type='text' id='img' onChange={this.handleChange} value={this.state.img}></input>
+                    <input type="submit" value="Submit"></input>
                 </form>
             </div>
         )

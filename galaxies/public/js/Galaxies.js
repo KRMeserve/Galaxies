@@ -40,8 +40,10 @@ class Galaxies extends React.Component {
                 'Content-Type': 'application/json'
             }
         }).then(createdGalaxy => {
+            console.log(createdGalaxy, 'Created Galaxy');
             return createdGalaxy.json()
         }).then(jsonedGalaxy => {
+            console.log(jsonedGalaxy, 'JSONed Galaxy');
             this.galaxyCreate(jsonedGalaxy)
             this.toggleState('galaxiesIsVisible', 'addGalaxyIsVisible')
         })
@@ -101,6 +103,9 @@ class Galaxies extends React.Component {
                       :
                       ''
                   }
+                  <button onClick={()=>{
+                      this.toggleState('galaxiesIsVisible', 'addGalaxyIsVisible')
+                  }}>Add New Galaxy</button>
                   <footer>
                     <h4>Created and designed by Kyle Meserve and Rick Christenhusz</h4>
                     <h4>2018</h4>

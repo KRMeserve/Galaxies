@@ -46,7 +46,7 @@ class Galaxy
             RETURNING id, name, distance, radius, date_discovered, img, shape;
         SQL
       )
-        return
+        return (
             {
                 "id" => results.first["id"].to_i,
                 "name" => results.first["name"],
@@ -55,7 +55,7 @@ class Galaxy
                 "date_discovered" => results.first["date_discovered"].to_i,
                 "img" => results.first["img"],
                 "shape" => results.first["shape"]
-            }
+            })
       end
 
       def self.delete(id)
