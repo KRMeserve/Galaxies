@@ -10,3 +10,4 @@
   INSERT INTO galaxies (name, distance, radius, date_discovered, img, shape) VALUES ('The Sombrero Galaxy', '28 Million Light Years', '25,000 Light Years', 1781, 'https://goo.gl/43wHFG', 'spiral');
   INSERT INTO galaxies (name, distance, radius, date_discovered, img, shape) VALUES ('The Whirlpool Galaxy', '31 Million Light Years', '30,000 Light Years', 1773, 'https://goo.gl/6bfq2u', 'spiral');
   INSERT INTO galaxies (name, distance, radius, date_discovered, img, shape) VALUES ('Galaxy NGC 1512', '30 Million Light Years', '35,000 Light Years', 2001, 'https://goo.gl/qvwpG7', 'barred spiral');
+  SELECT * FROM galaxies;
