@@ -25,6 +25,14 @@ class Galaxies extends React.Component {
             this.getGalaxies()
         })
     }
+    getGalaxies() {
+        fetch('/galaxies').then(response => response.json()).then(data => {
+            this.setState({
+                galaxies: data
+            })
+            console.log(data);
+        })
+    }
     galaxyCreate(galaxy){
         console.log([galaxy, ...this.state.galaxies]);
         this.setState({
@@ -40,20 +48,27 @@ class Galaxies extends React.Component {
                 'Content-Type': 'application/json'
             }
         }).then(createdGalaxy => {
-            console.log(createdGalaxy, 'Created Galaxy');
             return createdGalaxy.json()
         }).then(jsonedGalaxy => {
-            console.log(jsonedGalaxy, 'JSONed Galaxy');
             this.galaxyCreate(jsonedGalaxy)
             this.toggleState('galaxiesIsVisible', 'addGalaxyIsVisible')
         })
     }
-    getGalaxies() {
-        fetch('/galaxies').then(response => response.json()).then(data => {
-            this.setState({
-                galaxies: data
-            })
-            console.log(data);
+    galaxyUpdateSubmit(galaxy){
+        fetch('/galaxies/' + galaxy.id, {
+            body: JSON.stringify(galaxy),
+            method: 'PUT',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+            }
+        }).then(updatedGalaxy => {
+            console.log(updatedGalaxy, 'Updated Galaxy');
+            return updatedGalaxy.json()
+        }).then(jsonedGalaxy => {
+            console.log(jsonedGalaxy, 'JSONed Galaxy');
+            this.toggleState('galaxiesIsVisible', 'galaxyIsVisible')
+            this.getGalaxies()
         })
     }
     showGalaxy(galaxy) {
@@ -74,11 +89,16 @@ class Galaxies extends React.Component {
               <div className="container">
                   {this.state.galaxiesIsVisible
                       ?
-                      <GalaxiesList
-                          galaxies={this.state.galaxies}
-                          toggleState={this.toggleState}
-                          showGalaxy={this.showGalaxy}>
-                      </GalaxiesList>
+                      <div>
+                          <GalaxiesList
+                              galaxies={this.state.galaxies}
+                              toggleState={this.toggleState}
+                              showGalaxy={this.showGalaxy}>
+                          </GalaxiesList>
+                          <button onClick={()=>{
+                              this.toggleState('galaxiesIsVisible', 'addGalaxyIsVisible')
+                          }}>Add New Galaxy</button>
+                      </div>
                       :
                       ''
                   }
@@ -88,7 +108,7 @@ class Galaxies extends React.Component {
                           toggleState={this.toggleState}
                           galaxy={this.state.galaxy}
                           deleteGalaxy={this.deleteGalaxy}
-                          galaxySubmit={this.galaxyCreateSubmit}>
+                          galaxySubmit={this.galaxyUpdateSubmit}>
                       </Galaxy>
                       :
                       ''
@@ -103,9 +123,6 @@ class Galaxies extends React.Component {
                       :
                       ''
                   }
-                  <button onClick={()=>{
-                      this.toggleState('galaxiesIsVisible', 'addGalaxyIsVisible')
-                  }}>Add New Galaxy</button>
                   <footer>
                     <h4>Created and designed by Kyle Meserve and Rick Christenhusz</h4>
                     <h4>2018</h4>
