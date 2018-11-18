@@ -7,6 +7,7 @@ class Galaxies extends React.Component {
         this.deleteGalaxy = this.deleteGalaxy.bind(this);
         this.galaxyCreate = this.galaxyCreate.bind(this);
         this.galaxyCreateSubmit = this.galaxyCreateSubmit.bind(this);
+        this.galaxyUpdateSubmit = this.galaxyUpdateSubmit.bind(this);
         this.state = {
             galaxiesIsVisible: true,
             galaxyIsVisible: false,
