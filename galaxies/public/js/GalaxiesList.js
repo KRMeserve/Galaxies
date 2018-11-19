@@ -4,6 +4,7 @@ class GalaxiesList extends React.Component {
               <div className="container">
                   {this.props.galaxies.map((galaxy, index) => {
                       return (
+
                           <div className="galaxy">
                           <img src={galaxy.img} onClick={()=>{this.props.showGalaxy(galaxy); this.props.toggleState('galaxiesIsVisible', 'galaxyIsVisible')}}></img>
                           <h2 onClick={()=>{this.props.showGalaxy(galaxy); this.props.toggleState('galaxiesIsVisible', 'galaxyIsVisible')}}>{galaxy.name}</h2>

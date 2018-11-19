@@ -2,6 +2,7 @@ body {
   background-color: black;
   color: white;
   background-image: url('https://goo.gl/mUiRaQ');
+  margin: 0;
 }
 
 h1 {
@@ -18,12 +19,36 @@ h1 {
   justify-content: space-around;
 }
 
+.galaxy-container {
+    text-align: center;
+}
+
 img {
   /* margin: 0 20px; */
   width: 500px;
-  height: auto;
   border: 1px solid rgb(4, 115, 186);
   border-radius: 10px;
+}
+
+.galaxy-img {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.info-title {
+    font-size: 2em;
+    text-transform: uppercase;
+}
+
+.galaxy-info {
+    background-color: rgba(255,255,255,0.6);
+    width: 50%;
+    margin: 15px auto;
+    color: black;
+    padding: 15px;
+    border-radius: 2px;
+    border: 2px solid orange;
 }
 
 .galaxy {
@@ -31,14 +56,100 @@ img {
   text-align: center;
 }
 
+button {
+    display: block;
+    padding: 15px;
+    margin: 10px auto;
+    background-color: orange;
+    transition: .2s;
+}
+button:hover {
+    background-color: rgb(7, 145, 196);
+    cursor: pointer;
+}
+.delete-button:hover {
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+
 footer {
+  display: flex;
   margin-top: 30px;
   width: 100%;
   background-color: rgb(62, 62, 62);
-  /* justify-content: space-between; */
+  justify-content: space-between;
   text-align: center;
+  padding: 0 10px;
 }
 
+footer a {
+  color: white;
+}
 /* footer > span {
   text-align: right;
 } */
+
+/* #container, .carousel {
+	height:100%;
+	margin: 0;
+	width: 100%;
+} */
+
+$theme-blue: #14B6D4;
+
+.image-slide {
+	height: 100%;
+	width: 100%;
+	transition: background-image 1s ease-in-out;
+}
+
+.carousel-box {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+}
+.carousel-box img {
+    max-height: 40vw;
+    min-width: 80%;
+    transition: .4s;
+}
+.carousel-box img:hover {
+    border: 1px solid rgb(17, 163, 32);
+    cursor: pointer;
+}
+
+.slide-arrow {
+	color: $theme-blue;
+	cursor: pointer;
+	font-size: 3rem;
+	position: block;
+	align-self: center;
+    transition: .2s;
+}
+
+.slide-arrow:hover {
+  color: rgb(7, 145, 196);
+}
+
+.slide-arrow.right {
+	right: 7rem;
+}
+
+.slide-arrow.left {
+	left: 7rem;
+}
+ .carousel {
+   /* background-image: url('https://goo.gl/aWnc9g'); */
+   text-align: center;
+   font-family: 'Geostar Fill', cursive;
+   font-size: 30px;
+   font-weight: bold;
+   letter-spacing: 2px;
+ }
+
+.carousel img {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}
