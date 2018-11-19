@@ -48,6 +48,7 @@ img {
     color: black;
     padding: 15px;
     border-radius: 2px;
+    border: 2px solid orange;
 }
 
 .galaxy {
@@ -62,12 +63,13 @@ button {
 }
 
 footer {
-  display: inline-block;
+  display: flex;
   margin-top: 30px;
   width: 100%;
   background-color: rgb(62, 62, 62);
-  /* justify-content: space-between; */
+  justify-content: space-between;
   text-align: center;
+  padding: 0 10px;
 }
 
 /* footer > span {
