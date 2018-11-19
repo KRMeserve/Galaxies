@@ -149,7 +149,7 @@ class Galaxies extends React.Component {
                       ''
                   }
                   <footer>
-                    <h4>Created and designed by Kyle Meserve and Rick Christenhusz</h4>
+                    <h4>Created and designed by <a href="https://www.linkedin.com/in/kylemeserve/">Kyle Meserve</a> and <a href="https://www.linkedin.com/in/frederick-christenhusz/">Rick Christenhusz</a></h4>
                     <h4>2018</h4>
                   </footer>
               </div>
