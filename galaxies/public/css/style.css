@@ -72,6 +72,9 @@ footer {
   padding: 0 10px;
 }
 
+footer a {
+  color: white;
+}
 /* footer > span {
   text-align: right;
 } */
@@ -117,3 +120,9 @@ $theme-blue: #14B6D4;
    font-weight: bold;
    letter-spacing: 2px;
  }
+
+.carousel img {
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+}

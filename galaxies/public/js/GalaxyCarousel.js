@@ -9,7 +9,8 @@ class GalaxyCarousel extends React.Component {
       this.previousGalaxy = this.previousGalaxy.bind(this);
       this.getImgs = this.getImgs.bind(this);
       this.state = {
-          currentImageIndex: 0
+          currentImageIndex: 0,
+          galaxies: []
       };
     }
 
@@ -30,7 +31,8 @@ class GalaxyCarousel extends React.Component {
         galaxyUrl.push(galaxyImgs[0][i].img);
         galaxyName.push(galaxyImgs[0][i].name)
         this.setState({
-          currentImageIndex: 0
+          currentImageIndex: 0,
+          galaxies: galaxyImgs
         });
         // console.log(galaxyName);
       }
@@ -66,10 +68,11 @@ class GalaxyCarousel extends React.Component {
     	}
 
       render () {
+        // console.log(this.props.galaxies[this.state.currentImageIndex]);
         return (
           <div className="carousel image-slide">
             <Arrow direction="left" clickFunction={ this.previousGalaxy } glyph="&#9664;" />
-            <img src={ galaxyUrl[this.state.currentImageIndex] } />
+            <img src={ galaxyUrl[this.state.currentImageIndex] } onClick={() => {this.props.showGalaxy(this.props.galaxies[this.state.currentImageIndex]); this.props.toggleState("galaxiesIsVisible", "galaxyIsVisible")}}/>
             <p className="galaxy-name">{galaxyName[this.state.currentImageIndex]}</p>
             <Arrow direction="right" clickFunction={ this.nextGalaxy } glyph="&#9654;" />
           </div>

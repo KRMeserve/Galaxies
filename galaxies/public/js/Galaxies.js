@@ -106,20 +106,20 @@ class Galaxies extends React.Component {
             <div>
               <h1>Best Galaxies in the World!</h1>
               <div className="container">
-                <GalaxyCarousel
-                    galaxies={this.state.galaxies}
-                    toggleState={this.toggleState}
-                    showGalaxy={this.showGalaxy}
-                  />
 
                   {this.state.galaxiesIsVisible
                       ?
                       <div>
-                          <GalaxiesList
+                        <GalaxyCarousel
+                          galaxies={this.state.galaxies}
+                          toggleState={this.toggleState}
+                          showGalaxy={this.showGalaxy}
+                        />
+                          {/* <GalaxiesList
                               galaxies={this.state.galaxies}
                               toggleState={this.toggleState}
                               showGalaxy={this.showGalaxy}>
-                          </GalaxiesList>
+                          </GalaxiesList> */}
                           <button onClick={()=>{
                               this.toggleState('galaxiesIsVisible', 'addGalaxyIsVisible')
                           }}>Add New Galaxy</button>
