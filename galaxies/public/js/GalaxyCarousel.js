@@ -69,7 +69,7 @@ class GalaxyCarousel extends React.Component {
         return (
           <div className="carousel image-slide">
             <Arrow direction="left" clickFunction={ this.previousGalaxy } glyph="&#9664;" />
-            <img src={ galaxyUrl[this.state.currentImageIndex] }/>
+            <img src={ galaxyUrl[this.state.currentImageIndex] } />
             <p className="galaxy-name">{galaxyName[this.state.currentImageIndex]}</p>
             <Arrow direction="right" clickFunction={ this.nextGalaxy } glyph="&#9654;" />
           </div>

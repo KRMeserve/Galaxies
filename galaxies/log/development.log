@@ -2933,3 +2933,53 @@ Processing by GalaxiesController#index as */*
 Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/galaxies" for 127.0.0.1 at 2018-11-19 16:23:08 -0500
+Processing by GalaxiesController#index as */*
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/galaxies" for 127.0.0.1 at 2018-11-19 16:23:54 -0500
+Processing by GalaxiesController#index as */*
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/galaxies" for 127.0.0.1 at 2018-11-19 16:24:19 -0500
+Processing by GalaxiesController#index as */*
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/galaxies" for 127.0.0.1 at 2018-11-19 16:24:34 -0500
+Processing by GalaxiesController#index as */*
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/galaxies" for 127.0.0.1 at 2018-11-19 16:31:52 -0500
+Processing by GalaxiesController#index as */*
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/galaxies" for 127.0.0.1 at 2018-11-19 16:33:28 -0500
+Processing by GalaxiesController#index as */*
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/galaxies" for 127.0.0.1 at 2018-11-19 16:37:15 -0500
+Processing by GalaxiesController#index as */*
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/galaxies" for 127.0.0.1 at 2018-11-19 16:37:32 -0500
+Processing by GalaxiesController#index as */*
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/galaxies" for 127.0.0.1 at 2018-11-19 16:40:37 -0500
+Processing by GalaxiesController#index as */*
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/galaxies" for 127.0.0.1 at 2018-11-19 16:42:15 -0500
+Processing by GalaxiesController#index as */*
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+

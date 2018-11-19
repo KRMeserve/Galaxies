@@ -106,7 +106,12 @@ class Galaxies extends React.Component {
             <div>
               <h1>Best Galaxies in the World!</h1>
               <div className="container">
-                <GalaxyCarousel galaxies={this.state.galaxies}/>
+                <GalaxyCarousel
+                    galaxies={this.state.galaxies}
+                    toggleState={this.toggleState}
+                    showGalaxy={this.showGalaxy}
+                  />
+
                   {this.state.galaxiesIsVisible
                       ?
                       <div>
