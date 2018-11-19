@@ -18,12 +18,26 @@ h1 {
   justify-content: space-around;
 }
 
+.galaxy-container {
+    text-align: center;
+}
+
 img {
   /* margin: 0 20px; */
   width: 500px;
-  height: auto;
   border: 1px solid rgb(4, 115, 186);
   border-radius: 10px;
+}
+
+.galaxy-img {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.info-title {
+    font-size: 2em;
+    text-transform: uppercase;
 }
 
 .galaxy {
