@@ -38,14 +38,11 @@ class Galaxies extends React.Component {
     getGalaxies() {
         fetch('/galaxies').then(response => response.json()).then(data => {
             galaxyImgs.push(data)
-            // galaxyImgs.push(data[1].img)
-            // galaxyImgs.push(data[2].img)
-            // console.log(galaxyImgs);
             this.setState({
                 galaxies: data
 
             })
-            console.log(data);
+            // console.log(data);
         })
     }
 
@@ -103,15 +100,13 @@ class Galaxies extends React.Component {
         })
     }
 
-    // -=-=-=-=--=--=-=-=-=-==-=-=-==-=-=- Carousel Code =-=-=-=-=-=-=-=-=-=-=-=-=
-
 
     render(){
         return (
             <div>
               <h1>Best Galaxies in the World!</h1>
               <div className="container">
-                <GalaxyCarousel galaxyImgs={this.state.galaxies}/>
+                <GalaxyCarousel galaxies={this.state.galaxies}/>
                   {this.state.galaxiesIsVisible
                       ?
                       <div>

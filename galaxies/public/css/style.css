@@ -44,18 +44,18 @@ footer {
   text-align: right;
 } */
 
-#container, .carousel {
+/* #container, .carousel {
 	height:100%;
 	margin: 0;
 	width: 100%;
-}
+} */
 
 $theme-blue: #14B6D4;
 
 .image-slide {
 	height: 100%;
 	width: 100%;
-	transition: background-image .3s ease-in-out;
+	transition: background-image 1s ease-in-out;
 }
 
 .slide-arrow {
@@ -73,3 +73,10 @@ $theme-blue: #14B6D4;
 .slide-arrow.left {
 	left: 1rem;
 }
+ /* .carousel {
+   background-image: url('https://goo.gl/aWnc9g');
+ }
+
+.test {
+  background-image: url('https://goo.gl/aWnc9g');
+} */
