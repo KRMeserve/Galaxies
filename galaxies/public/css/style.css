@@ -57,9 +57,20 @@ img {
 }
 
 button {
+    display: block;
     padding: 15px;
-    margin: 10px;
+    margin: 10px auto;
     background-color: orange;
+    transition: .2s;
+}
+button:hover {
+    background-color: rgb(7, 145, 196);
+    cursor: pointer;
+}
+.delete-button:hover {
+    background-color: red;
+    color: white;
+    cursor: pointer;
 }
 
 footer {
@@ -93,12 +104,28 @@ $theme-blue: #14B6D4;
 	transition: background-image 1s ease-in-out;
 }
 
+.carousel-box {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+}
+.carousel-box img {
+    max-height: 40vw;
+    min-width: 80%;
+    transition: .4s;
+}
+.carousel-box img:hover {
+    border: 1px solid rgb(17, 163, 32);
+    cursor: pointer;
+}
+
 .slide-arrow {
 	color: $theme-blue;
 	cursor: pointer;
 	font-size: 3rem;
-	position: fixed;
-	top: 50%;
+	position: block;
+	align-self: center;
+    transition: .2s;
 }
 
 .slide-arrow:hover {
@@ -106,11 +133,11 @@ $theme-blue: #14B6D4;
 }
 
 .slide-arrow.right {
-	right: 2rem;
+	right: 7rem;
 }
 
 .slide-arrow.left {
-	left: 2rem;
+	left: 7rem;
 }
  .carousel {
    /* background-image: url('https://goo.gl/aWnc9g'); */
@@ -122,7 +149,7 @@ $theme-blue: #14B6D4;
  }
 
 .carousel img {
-  width: 60%;
+  width: 80%;
   display: block;
   margin: 0 auto;
 }
