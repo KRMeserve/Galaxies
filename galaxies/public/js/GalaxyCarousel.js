@@ -1,5 +1,6 @@
 const galaxyImgs = [];
 const galaxyUrl = [];
+const galaxyName = [];
 
 class GalaxyCarousel extends React.Component {
     constructor(props) {
@@ -12,20 +13,26 @@ class GalaxyCarousel extends React.Component {
       };
     }
 
-    componentWillMount() {
-      this.nextGalaxy();
-    }
+    // componentWillMount() {
+    //   this.nextGalaxy();
+    // }
 
     componentDidMount() {
       // this.getImgs()
       // setTimeout(this.nextGalaxy);
+
       setTimeout(this.getImgs, 1000);
+
     }
 
     getImgs () {
       for (let i=0; i < galaxyImgs[0].length; i++) {
-        galaxyUrl.push(galaxyImgs[0][i].img)
-        // console.log(galaxyUrl);
+        galaxyUrl.push(galaxyImgs[0][i].img);
+        galaxyName.push(galaxyImgs[0][i].name)
+        this.setState({
+          currentImageIndex: 0
+        });
+        // console.log(galaxyName);
       }
     }
 
@@ -60,9 +67,10 @@ class GalaxyCarousel extends React.Component {
 
       render () {
         return (
-          <div className="carousel">
+          <div className="carousel image-slide">
             <Arrow direction="left" clickFunction={ this.previousGalaxy } glyph="&#9664;" />
-            <img className="image-slide" src={ galaxyUrl[this.state.currentImageIndex] }/>
+            <img src={ galaxyUrl[this.state.currentImageIndex] }/>
+            <p className="galaxy-name">{galaxyName[this.state.currentImageIndex]}</p>
             <Arrow direction="right" clickFunction={ this.nextGalaxy } glyph="&#9654;" />
           </div>
         );
