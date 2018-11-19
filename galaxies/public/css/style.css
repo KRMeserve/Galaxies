@@ -48,6 +48,7 @@ img {
     color: black;
     padding: 15px;
     border-radius: 2px;
+    border: 2px solid orange;
 }
 
 .galaxy {
@@ -62,44 +63,66 @@ button {
 }
 
 footer {
-  display: inline-block;
+  display: flex;
   margin-top: 30px;
   width: 100%;
   background-color: rgb(62, 62, 62);
-  /* justify-content: space-between; */
+  justify-content: space-between;
   text-align: center;
+  padding: 0 10px;
 }
 
+footer a {
+  color: white;
+}
 /* footer > span {
   text-align: right;
 } */
 
-#container, .carousel {
+/* #container, .carousel {
 	height:100%;
 	margin: 0;
 	width: 100%;
-}
+} */
 
 $theme-blue: #14B6D4;
 
 .image-slide {
 	height: 100%;
 	width: 100%;
-	transition: background-image .3s ease-in-out;
+	transition: background-image 1s ease-in-out;
 }
 
 .slide-arrow {
 	color: $theme-blue;
 	cursor: pointer;
-	font-size: 2rem;
+	font-size: 3rem;
 	position: fixed;
 	top: 50%;
 }
 
+.slide-arrow:hover {
+  color: rgb(7, 145, 196);
+}
+
 .slide-arrow.right {
-	right: 1rem;
+	right: 2rem;
 }
 
 .slide-arrow.left {
-	left: 1rem;
+	left: 2rem;
+}
+ .carousel {
+   /* background-image: url('https://goo.gl/aWnc9g'); */
+   text-align: center;
+   font-family: 'Geostar Fill', cursive;
+   font-size: 30px;
+   font-weight: bold;
+   letter-spacing: 2px;
+ }
+
+.carousel img {
+  width: 60%;
+  display: block;
+  margin: 0 auto;
 }

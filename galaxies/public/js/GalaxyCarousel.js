@@ -1,5 +1,6 @@
 const galaxyImgs = [];
 const galaxyUrl = [];
+const galaxyName = [];
 
 class GalaxyCarousel extends React.Component {
     constructor(props) {
@@ -8,56 +9,71 @@ class GalaxyCarousel extends React.Component {
       this.previousGalaxy = this.previousGalaxy.bind(this);
       this.getImgs = this.getImgs.bind(this);
       this.state = {
-          currentImageIndex: 0
+          currentImageIndex: 0,
+          galaxies: []
       };
     }
 
+    // componentWillMount() {
+    //   this.nextGalaxy();
+    // }
+
     componentDidMount() {
       // this.getImgs()
+      // setTimeout(this.nextGalaxy);
+
       setTimeout(this.getImgs, 1000);
+
     }
 
     getImgs () {
       for (let i=0; i < galaxyImgs[0].length; i++) {
-        galaxyUrl.push(galaxyImgs[0][i].img)
-        console.log(galaxyUrl);
+        galaxyUrl.push(galaxyImgs[0][i].img);
+        galaxyName.push(galaxyImgs[0][i].name)
+        this.setState({
+          currentImageIndex: 0,
+          galaxies: galaxyImgs
+        });
+        // console.log(galaxyName);
       }
     }
 
     previousGalaxy () {
-        console.log(this.state.currentImageIndex);
+        // console.log(this.state.currentImageIndex);
         // console.log(galaxyUrl);
-        console.log("previous works");
+        // console.log("previous works");
     		const lastIndex = galaxyUrl.length - 1;
         // console.log(lastIndex);
     		const { currentImageIndex } = this.state;
     		const shouldResetIndex = currentImageIndex === 0;
     		const index =  shouldResetIndex ? lastIndex : currentImageIndex - 1;
-        console.log(galaxyUrl[this.state.currentImageIndex]);
+        // console.log(galaxyUrl[this.state.currentImageIndex]);
     		this.setState({
     			currentImageIndex: index
     		});
     	}
 
     nextGalaxy () {
-        console.log(this.state.currentImageIndex);
-        console.log("next works");
+        // console.log(this.state.currentImageIndex);
+        // console.log("next works");
     		const lastIndex = galaxyUrl.length - 1;
         // console.log(lastIndex);
     		const { currentImageIndex } = this.state;
     		const shouldResetIndex = currentImageIndex === lastIndex;
     		const index =  shouldResetIndex ? 0 : currentImageIndex + 1;
-
+        // console.log(galaxyUrl[this.state.currentImageIndex]);
     		this.setState({
     			currentImageIndex: index
     		});
     	}
 
       render () {
+        // console.log(this.props.galaxies[this.state.currentImageIndex]);
         return (
-          <div className="carousel">
+          <div className="carousel image-slide">
             <Arrow direction="left" clickFunction={ this.previousGalaxy } glyph="&#9664;" />
-            <GalaxyPics url={ galaxyUrl[this.state.currentImageIndex] } />
+            <img src={ galaxyUrl[this.state.currentImageIndex] } onClick={() => {this.props.showGalaxy(this.props.galaxies[this.state.currentImageIndex]); this.props.toggleState("galaxiesIsVisible", "galaxyIsVisible")}}/>
+            <p className="galaxy-name">{galaxyName[this.state.currentImageIndex]}</p>
             <Arrow direction="right" clickFunction={ this.nextGalaxy } glyph="&#9654;" />
           </div>
         );
@@ -73,14 +89,9 @@ const Arrow = ({ direction, clickFunction, glyph }) => (
 	</div>
 );
 
-const GalaxyPics = ({ url }) => {
-	const styles = {
-		backgroundImage: `url(${url})`,
-		backgroundSize: 'cover',
-		backgroundPosition: 'center'
-	};
 
-	return (
-		<div className="image-slide" style={styles}></div>
-	);
-}
+	// const styles = {
+	// 	backgroundImage: `url(${galaxies})`,
+	// 	backgroundSize: 'cover',
+	// 	backgroundPosition: 'center'
+	// };
