@@ -13,19 +13,21 @@ class Galaxy extends React.Component {
     }
     render(){
         return (
-            <div className="container">
+            <div className="galaxy-container">
                 <h1 onClick={()=>{this.props.toggleState('galaxiesIsVisible', 'galaxyIsVisible')}}>{this.props.galaxy.name}</h1>
-                <img src={this.props.galaxy.img}></img>
-                <h4>Distance from Earth: {this.props.galaxy.distance}</h4>
-                <h4>Radius: {this.props.galaxy.radius}</h4>
-                <h4>Date Discovered: {this.props.galaxy.date_discovered}</h4>
-                <h4>Shape of Galaxy: {this.props.galaxy.shape}</h4>
+                <img className="galaxy-img" src={this.props.galaxy.img}></img>
+                <div className="galaxy-info">
+                    <h4><span className="info-title">Distance from Earth:</span> {this.props.galaxy.distance}</h4>
+                    <h4><span className="info-title">Radius:</span> {this.props.galaxy.radius}</h4>
+                    <h4><span className="info-title">Date Discovered:</span> {this.props.galaxy.date_discovered}</h4>
+                    <h4><span className="info-title">Shape of Galaxy:</span> {this.props.galaxy.shape}</h4>
+                </div>
                 {this.state.showForm
                     ?
                     <GalaxiesForm galaxySubmit={this.props.galaxySubmit}
                         galaxy={this.props.galaxy} toggleState={this.props.toggleState}></GalaxiesForm>
                     :
-                    <div>
+                    <div className="buttons">
                         <button onClick={()=>{this.props.toggleState('galaxiesIsVisible', 'galaxyIsVisible'); this.props.deleteGalaxy(this.props.galaxy, this.props.galaxy.id)}}>DELETE GALAXY</button>
                         <button onClick={()=>{this.showForm()}}>EDIT GALAXY</button>
                     </div>
