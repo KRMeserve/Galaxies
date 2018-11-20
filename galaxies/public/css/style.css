@@ -76,6 +76,10 @@ button:hover {
     cursor: pointer;
 }
 
+h4 {
+    margin: 10px;
+}
+
 footer {
   display: flex;
   margin-top: 0;
@@ -165,7 +169,7 @@ $theme-blue: #14B6D4;
 
 .landing-page {
     width: 100%;
-    height: 93.5vh;
+    height: 95vh;
     text-align: center;
     background-image: url("https://giffiles.alphacoders.com/141/14130.gif");
     background-repeat: no-repeat;

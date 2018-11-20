@@ -73,7 +73,7 @@ class GalaxyCarousel extends React.Component {
               <p className="galaxy-name">{galaxyName[this.state.currentImageIndex]}</p>
               <div className="carousel-box">
                   <Arrow direction="left" clickFunction={ this.previousGalaxy } glyph="&#9664;" />
-                  <img src={ galaxyUrl[this.state.currentImageIndex] } onClick={() => {this.props.showGalaxy(this.props.galaxies[this.state.currentImageIndex]); this.props.toggleState("galaxiesIsVisible", "galaxyIsVisible")}}/>
+                  <img src={ galaxyUrl[this.state.currentImageIndex] } onClick={() => {this.props.showGalaxy(this.props.galaxies[this.state.currentImageIndex]); this.props.toggleState("carouselIsVisible", "galaxyIsVisible")}}/>
                   <Arrow direction="right" clickFunction={ this.nextGalaxy } glyph="&#9654;" />
               </div>
           </div>
