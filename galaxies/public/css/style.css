@@ -127,6 +127,10 @@ $theme-blue: #14B6D4;
     min-width: 80%;
     transition: .4s;
 }
+
+.galaxy-list-img {
+    transition: .4s;
+}
 .carousel-box img:hover, .galaxy-list-img:hover {
     border: 2px solid rgb(17, 163, 32);
     cursor: pointer;
