@@ -13,6 +13,7 @@ class Galaxies extends React.Component {
         this.galaxyCreateSubmit = this.galaxyCreateSubmit.bind(this);
         this.galaxyUpdateSubmit = this.galaxyUpdateSubmit.bind(this);
         this.state = {
+            carouselIsVisible: false,
             landingPageIsVisible: true,
             galaxiesIsVisible: false,
             galaxyIsVisible: false,
@@ -111,7 +112,7 @@ class Galaxies extends React.Component {
                       :
                       ""
                   }
-                  {this.state.galaxiesIsVisible
+                  {this.state.carouselIsVisible
                       ?
                       <div>
                         <h1>Pick a Galaxy!</h1>
@@ -120,14 +121,32 @@ class Galaxies extends React.Component {
                           toggleState={this.toggleState}
                           showGalaxy={this.showGalaxy}
                         />
-                          {/* <GalaxiesList
-                              galaxies={this.state.galaxies}
-                              toggleState={this.toggleState}
-                              showGalaxy={this.showGalaxy}>
-                          </GalaxiesList> */}
+
                           <button onClick={()=>{
                               this.toggleState('galaxiesIsVisible', 'addGalaxyIsVisible')
                           }}>Add New Galaxy</button>
+                          <button onClick={()=>{
+                              this.toggleState('galaxiesIsVisible', 'carouselIsVisible')
+                          }}>Toggle Index View</button>
+                      </div>
+                      :
+                      ''
+                  }
+                  {this.state.galaxiesIsVisible
+                      ?
+                      <div>
+                          <h1>Pick a Galaxy!</h1>
+                          <GalaxiesList
+                              galaxies={this.state.galaxies}
+                              toggleState={this.toggleState}
+                              showGalaxy={this.showGalaxy}>
+                          </GalaxiesList>
+                          <button onClick={()=>{
+                              this.toggleState('galaxiesIsVisible', 'addGalaxyIsVisible')
+                          }}>Add New Galaxy</button>
+                          <button onClick={()=>{
+                              this.toggleState('galaxiesIsVisible', 'carouselIsVisible')
+                          }}>Toggle Carousel View</button>
                       </div>
                       :
                       ''

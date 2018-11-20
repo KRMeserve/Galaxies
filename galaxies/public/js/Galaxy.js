@@ -29,7 +29,7 @@ class Galaxy extends React.Component {
                         galaxy={this.props.galaxy} toggleState={this.props.toggleState}></GalaxiesForm>
                     :
                     <div className="buttons">
-                        <button onClick={()=>{this.props.toggleState('galaxiesIsVisible', 'galaxyIsVisible')}}>BACK TO CAROUSEL</button>
+                        <button onClick={()=>{this.props.toggleState('galaxiesIsVisible', 'galaxyIsVisible')}}>BACK TO LIST</button>
                         <button onClick={()=>{this.showForm()}}>EDIT GALAXY</button>
                         <button className="delete-button" onClick={()=>{this.props.toggleState('galaxiesIsVisible', 'galaxyIsVisible'); this.props.deleteGalaxy(this.props.galaxy, this.props.galaxy.id)}}>DELETE GALAXY</button>
                     </div>
