@@ -13,8 +13,8 @@ class Galaxies extends React.Component {
         this.galaxyCreateSubmit = this.galaxyCreateSubmit.bind(this);
         this.galaxyUpdateSubmit = this.galaxyUpdateSubmit.bind(this);
         this.state = {
-
-            galaxiesIsVisible: true,
+            landingPageIsVisible: true,
+            galaxiesIsVisible: false,
             galaxyIsVisible: false,
             addGalaxyIsVisible: false,
             galaxies: [],
@@ -104,12 +104,17 @@ class Galaxies extends React.Component {
     render(){
         return (
             <div>
-              <h1>Best Galaxies in the World!</h1>
               <div className="container">
-
+                  {this.state.landingPageIsVisible
+                      ?
+                      <LandingPage toggleState={this.toggleState}></LandingPage>
+                      :
+                      ""
+                  }
                   {this.state.galaxiesIsVisible
                       ?
                       <div>
+                        <h1>Pick a Galaxy!</h1>
                         <GalaxyCarousel
                           galaxies={this.state.galaxies}
                           toggleState={this.toggleState}
@@ -149,7 +154,7 @@ class Galaxies extends React.Component {
                       ''
                   }
                   <footer>
-                    <h4>Created and designed by <a href="https://www.linkedin.com/in/kylemeserve/">Kyle Meserve</a> and <a href="https://www.linkedin.com/in/frederick-christenhusz/">Rick Christenhusz</a></h4>
+                    <h4>Created and designed by <a href="https://kylemeserve.com">Kyle Meserve</a> and <a href="https://www.linkedin.com/in/frederick-christenhusz/">Rick Christenhusz</a></h4>
                     <h4>2018</h4>
                   </footer>
               </div>
