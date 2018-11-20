@@ -18,6 +18,8 @@ The back-end was built on Ruby-on-Rails with a PostgreSQL database.
 
 The site is hosted on Heroku. 
 
+The photo carousel is written in React and is inspired by, and heavily modified from, an excellent tutorial by [Will Soares](https://goo.gl/7JUEPM). The tutorial is written at a level of complexity that nicely coincides with what we have learned about React thus far, and we found it very easy to follow and adapt for our purposes.
+
 ---
 
 ## Approach Taken
