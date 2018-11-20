@@ -36,20 +36,21 @@ class GalaxiesForm extends React.Component{
     }
     render(){
         return(
-            <div>
+            <div className="form">
+                <h1>Enter Information Below:</h1>
                 <form onSubmit={this.handleSubmit}>
-                    <p>Name:</p>
-                    <input type='text' id="name" ref="name" onChange={this.handleChange} value={this.state.name}></input>
-                    <p>Distance: </p>
-                    <input type='text' id='distance' onChange={this.handleChange} value={this.state.distance}></input>
-                    <p>Radius: </p>
-                    <input type='text' id='radius' onChange={this.handleChange} value={this.state.radius}></input>
-                    <p>Date Discovered: </p>
-                    <input type='number' id="date_discovered" onChange={this.handleChange} value={this.state.date_discovered}></input>
-                    <p>Shape: </p>
-                    <input type="text" id='shape' onChange={this.handleChange} value={this.state.shape}></input>
-                    <p>Image Link: </p>
-                    <input type='text' id='img' onChange={this.handleChange} value={this.state.img}></input>
+                    <label>Name:</label><br/>
+                    <input type='text' id="name" ref="name" onChange={this.handleChange} value={this.state.name}></input><br/>
+                    <label>Distance: </label><br/>
+                    <input type='text' id='distance' onChange={this.handleChange} value={this.state.distance}></input><br/>
+                    <label>Radius: </label><br/>
+                    <input type='text' id='radius' onChange={this.handleChange} value={this.state.radius}></input><br/>
+                    <label>Date Discovered: </label><br/>
+                    <input type='number' id="date_discovered" onChange={this.handleChange} value={this.state.date_discovered}></input><br/>
+                    <label>Shape: </label><br/>
+                    <input type="text" id='shape' onChange={this.handleChange} value={this.state.shape}></input><br/>
+                    <label>Image Link: </label><br/>
+                    <input type='text' id='img' onChange={this.handleChange} value={this.state.img}></input><br/>
                     <input type="submit" value="Submit"></input>
                 </form>
             </div>
