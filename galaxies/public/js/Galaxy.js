@@ -15,7 +15,7 @@ class Galaxy extends React.Component {
         return (
             <div className="galaxy-container">
                 <h1>{this.props.galaxy.name}</h1>
-                <button onClick={()=>{this.props.toggleState('galaxiesIsVisible', 'galaxyIsVisible')}}>BACK TO CAROUSEL</button>
+                <button onClick={()=>{this.props.toggleState('galaxiesIsVisible', 'galaxyIsVisible')}}>BACK TO LIST</button>
                 <img className="galaxy-img" src={this.props.galaxy.img}></img>
                 <div className="galaxy-info">
                     <h4><span className="info-title">Distance from Earth:</span> {this.props.galaxy.distance}</h4>
