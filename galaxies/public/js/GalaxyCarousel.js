@@ -31,8 +31,7 @@ class GalaxyCarousel extends React.Component {
         galaxyUrl.push(galaxyImgs[0][i].img);
         galaxyName.push(galaxyImgs[0][i].name)
         this.setState({
-          currentImageIndex: 0,
-          galaxies: galaxyImgs
+          currentImageIndex: 0
         });
         // console.log(galaxyName);
       }

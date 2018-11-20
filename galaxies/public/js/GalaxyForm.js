@@ -36,7 +36,7 @@ class GalaxiesForm extends React.Component{
     }
     render(){
         return(
-            <div>
+            <div className="form">
                 <h1>Enter Information Below:</h1>
                 <form onSubmit={this.handleSubmit}>
                     <label>Name:</label><br/>

@@ -123,7 +123,7 @@ $theme-blue: #14B6D4;
     min-width: 80%;
     transition: .4s;
 }
-.carousel-box img:hover {
+.carousel-box img:hover, .galaxy-list-img:hover {
     border: 2px solid rgb(17, 163, 32);
     cursor: pointer;
 }
@@ -187,8 +187,13 @@ form {
 }
 input {
     background-color: rgb(236, 200, 120);
+    font-family: 'Titillium Web', sans-serif;
     margin: 10px;
     padding: 5px;
-    width: 60%;
+    width: 250px;
     color: black;
+}
+
+.form {
+    height: 100vh;
 }
